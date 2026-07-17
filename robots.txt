@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /mailer.php
+
+Sitemap: https://fkepicurefoods.in/sitemap.xml
