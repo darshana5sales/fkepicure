@@ -251,53 +251,36 @@ h2.inline-h em{font-style:italic;font-weight:500;color:var(--saffron)}
 .chapter .ch-k{font-size:.66rem;font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:var(--stone);display:block;margin-bottom:8px}
 .chapter p{font-size:.9rem;color:var(--stone)}
 
-/* ---------- brands ---------- */
+/* ---------- brands (compact) ---------- */
 .brands{background:var(--paper)}
-.brand-card{
-  display:grid;grid-template-columns:1fr 1fr;
-  background:var(--ivory);border:1px solid var(--line);border-radius:24px;overflow:hidden;
-  margin-bottom:30px;
-  transition:transform .5s var(--ease),box-shadow .5s var(--ease);
+.brand-mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.brand-mini{
+  background:var(--ivory);border:1px solid var(--line);border-radius:20px;
+  padding:38px 30px;text-align:center;
+  display:flex;flex-direction:column;align-items:center;gap:14px;
+  transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s var(--ease);
 }
-.brand-card:last-child{margin-bottom:0}
-.brand-card:hover{transform:translateY(-10px);box-shadow:0 48px 90px -36px rgba(43,26,13,.35)}
-.brand-card:nth-child(even) .bc-media{order:2}
-.bc-media{position:relative;overflow:hidden;min-height:420px}
-.bc-media img.photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.3s var(--ease)}
-.brand-card:hover .bc-media img.photo{transform:scale(1.08)}
-.bc-media .tag{
-  position:absolute;top:24px;left:24px;z-index:2;
-  background:rgba(251,247,241,.92);backdrop-filter:blur(8px);
-  padding:8px 18px;border-radius:100px;
-  font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--saffron-deep);
+.brand-mini:hover{transform:translateY(-8px);box-shadow:0 34px 65px -32px rgba(43,26,13,.3);border-color:var(--saffron)}
+.bm-logo{
+  height:88px;display:flex;align-items:center;justify-content:center;
+  transition:transform .45s var(--ease);
 }
-.bc-body{padding:clamp(34px,4vw,60px);display:flex;flex-direction:column;justify-content:center}
-.bc-logo{
-  height:74px;display:inline-flex;align-items:center;margin-bottom:26px;
-  transition:transform .45s var(--ease);align-self:flex-start;
+.brand-mini:hover .bm-logo{transform:scale(1.06)}
+.bm-logo img{max-height:100%;width:auto;max-width:210px;object-fit:contain}
+.bm-logo.dark{background:var(--espresso);border-radius:14px;padding:14px 20px}
+.bm-tag{
+  font-size:.66rem;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--saffron-deep);
 }
-.brand-card:hover .bc-logo{transform:translateY(-4px) scale(1.04)}
-.bc-logo img{max-height:100%;width:auto;max-width:230px;object-fit:contain}
-.bc-logo.dark{background:var(--espresso);border-radius:14px;padding:14px 22px}
-.bc-body h3{font-family:var(--serif);font-weight:500;font-size:1.7rem;margin-bottom:6px}
-.bc-body .bc-tag{font-family:var(--serif);font-style:italic;color:var(--saffron);margin-bottom:18px;font-size:1.02rem}
-.bc-body p{color:var(--coffee);font-size:.95rem;margin-bottom:22px}
-.bc-meta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
-.bc-meta span{
-  font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
-  border:1px solid var(--line);border-radius:100px;padding:7px 16px;color:var(--stone);
-  transition:all .3s var(--ease);
+.brand-mini p{color:var(--coffee);font-size:.9rem;line-height:1.6;max-width:280px}
+.bm-link{
+  display:inline-flex;align-items:center;gap:8px;margin-top:4px;
+  font-size:.74rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--espresso);
+  position:relative;padding-bottom:5px;
 }
-.bc-meta span:hover{border-color:var(--saffron);color:var(--saffron);transform:translateY(-2px)}
-.bc-link{
-  display:inline-flex;align-items:center;gap:10px;align-self:flex-start;
-  font-size:.78rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--espresso);
-  position:relative;padding-bottom:6px;
-}
-.bc-link::after{content:"";position:absolute;left:0;bottom:0;height:1.5px;width:100%;background:var(--saffron);transform:scaleX(.35);transform-origin:left;transition:transform .4s var(--ease)}
-.bc-link:hover::after{transform:scaleX(1)}
-.bc-link .arr{transition:transform .35s var(--ease)}
-.bc-link:hover .arr{transform:translateX(6px)}
+.bm-link::after{content:"";position:absolute;left:0;bottom:0;height:1.5px;width:100%;background:var(--saffron);transform:scaleX(.35);transform-origin:left;transition:transform .4s var(--ease)}
+.brand-mini:hover .bm-link::after{transform:scaleX(1)}
+.bm-link .arr{transition:transform .35s var(--ease)}
+.brand-mini:hover .bm-link .arr{transform:translateX(6px)}
 
 /* ---------- products ---------- */
 .prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
@@ -613,9 +596,8 @@ footer{background:var(--espresso);color:var(--ivory);padding:54px 0 0;border-top
   .prod-grid{grid-template-columns:repeat(2,1fr)}
   .gallery-grid{grid-template-columns:repeat(2,1fr)}
   .qual-list{grid-template-columns:repeat(3,1fr)}
-  .brand-card{grid-template-columns:1fr}
-  .brand-card:nth-child(even) .bc-media{order:0}
-  .bc-media{min-height:280px}
+  .brand-mini-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto;gap:16px}
+  .brand-mini{padding:30px 24px}
   .foot-grid{grid-template-columns:1fr 1fr;gap:32px}
   /* keep the floating photo inside the section flow so it can't overlap the next block */
   .about-visual{max-width:520px;margin:0 auto 30px;width:100%}
