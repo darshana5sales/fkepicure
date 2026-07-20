@@ -463,25 +463,6 @@ h2.inline-h em{font-style:italic;font-weight:500;color:var(--saffron)}
 .t-card .t-role{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);margin-top:2px}
 .t-card .t-stars{color:var(--saffron);letter-spacing:4px;font-size:.8rem;margin-top:8px}
 
-/* ---------- faq ---------- */
-.faq-wrap{max-width:820px;margin:0 auto}
-.faq-item{border-bottom:1px solid var(--line)}
-.faq-q{
-  width:100%;background:none;border:0;cursor:pointer;text-align:left;
-  padding:28px 8px;display:flex;justify-content:space-between;align-items:center;gap:20px;
-  font-family:var(--serif);font-size:1.15rem;font-weight:500;color:var(--espresso);
-  transition:color .3s,padding-left .35s var(--ease);
-}
-.faq-q:hover{color:var(--saffron);padding-left:18px}
-.faq-q .fi{
-  width:34px;height:34px;border-radius:50%;border:1px solid var(--line);flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;font-family:var(--sans);font-size:1rem;
-  transition:transform .4s var(--ease),background .4s,color .4s,border-color .4s;
-}
-.faq-item.open .faq-q .fi{transform:rotate(45deg);background:var(--saffron);color:#fff;border-color:var(--saffron)}
-.faq-a{max-height:0;overflow:hidden;transition:max-height .5s var(--ease)}
-.faq-a p{padding:0 8px 28px;color:var(--stone);font-size:.94rem;max-width:700px}
-
 /* ---------- careers ---------- */
 .careers{padding:0}
 .careers-inner{
