@@ -1,0 +1,7 @@
+# Internal source documents — not for public hosting (contains pricing)
+Indifrozen Product Catalogue.pdf
+*.pdf
+
+# OS / editor cruft
+Thumbs.db
+.DS_Store
