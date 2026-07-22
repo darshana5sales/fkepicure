@@ -1,7 +1,7 @@
 /* ═══════════════════════════════════════════════════════════
    FK EPICURE FOODS — Main Scripts
    Sticky header · mobile menu · scroll reveal · counters ·
-   FAQ accordion · contact form (AJAX → mailer.php)
+   nav scroll-spy · contact form (AJAX → mailer.php)
    ═══════════════════════════════════════════════════════════ */
 
 (function () {
@@ -37,6 +37,26 @@
     });
   }, { threshold: 0.12 });
   document.querySelectorAll('.reveal').forEach(function (el) { revealIO.observe(el); });
+
+  /* ---------- nav scroll-spy ---------- */
+  var spyLinks = navLinks.querySelectorAll('a[href^="#"]');
+  var spyTargets = [];
+  spyLinks.forEach(function (a) {
+    var t = document.querySelector(a.getAttribute('href'));
+    if (t) spyTargets.push({ link: a, el: t });
+  });
+  if (spyTargets.length) {
+    var spy = function () {
+      var line = window.scrollY + 140;
+      var current = null;
+      spyTargets.forEach(function (t) {
+        if (t.el.offsetTop <= line) current = t.link;
+      });
+      spyLinks.forEach(function (a) { a.classList.toggle('active', a === current); });
+    };
+    window.addEventListener('scroll', spy, { passive: true });
+    spy();
+  }
 
   /* ---------- animated counters ---------- */
   var counterIO = new IntersectionObserver(function (entries) {
