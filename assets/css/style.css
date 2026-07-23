@@ -641,6 +641,21 @@ footer{background:var(--espresso);color:var(--ivory);padding:54px 0 0;border-top
 .to-top.show{opacity:1;pointer-events:auto;transform:none}
 .to-top:hover{background:var(--saffron);color:#fff;border-color:var(--saffron)}
 
+/* ═══════ SQUARE CORNERS — flat, industrial UI across every section ═══════
+   Squares every rounded-rectangle element. Genuine circles (icon backings,
+   check-ticks, the back-to-top button, decorative glows) keep their shape,
+   and the hero image frame keeps its arched corners by design. */
+.nav-cta,.btn,.hero-card,
+.brand-note,.lead-card,.brand-mini,.bm-logo,
+.cat,.cat-badge,.why-card,
+.mfg-feat,.line-card,.ln-tags span,
+.plabel-inner,.pl-points span,
+.career-list li,
+.enquiry-card,.cs-item,.loc-card,.loc-map,
+.c-row,.contact-form,.form-btn,.form-status,
+.field input,.field textarea,.field select,
+.q-checklist li{border-radius:0}
+
 /* ---------- responsive ---------- */
 /* seven-section nav no longer fits beside the wordmark + CTA — collapse early */
 @media(max-width:1180px){
