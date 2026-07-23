@@ -89,6 +89,37 @@
     });
   }
 
+  /* ---------- buyer/supplier toggle ---------- */
+  var enqToggle = document.getElementById('enqToggle');
+  if (enqToggle) {
+    var enqInterest = document.getElementById('enqInterest');
+    var enqRole = document.querySelector('.enq-role');
+    var enqMessage = document.getElementById('enqMessage');
+    var lblBuyer = document.querySelector('.tg-buyer');
+    var lblSupplier = document.querySelector('.tg-supplier');
+    var placeholders = {
+      buyer: 'Categories you want to import, target markets and expected volumes…',
+      supplier: 'What you supply — ingredients, packaging, equipment or services…'
+    };
+
+    var setMode = function (mode) {
+      var isSupplier = mode === 'supplier';
+      enqToggle.setAttribute('aria-checked', isSupplier ? 'true' : 'false');
+      enqToggle.classList.toggle('on', isSupplier);
+      if (enqInterest) enqInterest.value = isSupplier ? 'Supplier Enquiry' : 'Buyer Enquiry';
+      if (enqRole) enqRole.textContent = isSupplier ? 'Supplier' : 'Buyer';
+      if (enqMessage) enqMessage.placeholder = isSupplier ? placeholders.supplier : placeholders.buyer;
+      if (lblBuyer) lblBuyer.classList.toggle('is-active', !isSupplier);
+      if (lblSupplier) lblSupplier.classList.toggle('is-active', isSupplier);
+    };
+
+    enqToggle.addEventListener('click', function () {
+      setMode(enqToggle.getAttribute('aria-checked') === 'true' ? 'buyer' : 'supplier');
+    });
+    if (lblBuyer) lblBuyer.addEventListener('click', function () { setMode('buyer'); });
+    if (lblSupplier) lblSupplier.addEventListener('click', function () { setMode('supplier'); });
+  }
+
   /* ---------- enquiry forms → mailer.php ---------- */
   document.querySelectorAll('form.js-enquiry, #contactForm').forEach(function (form) {
     var statusBox = form.querySelector('.form-status');

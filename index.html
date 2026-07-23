@@ -517,11 +517,17 @@
       <p>Whether you want to stock our range or supply into our plant — tell us the details and we'll come back with a product list, pricing and MOQs.</p>
     </div>
 
-    <div class="enquiry-grid">
-      <!-- Buyer -->
+    <div class="enquiry-wrap">
       <form class="enquiry-card js-enquiry reveal" method="post" action="mailer.php" novalidate>
-        <h3>If you're a <span>Buyer</span></h3>
-        <input type="hidden" name="interest" value="Buyer Enquiry">
+        <div class="toggle-row">
+          <span class="tg-label tg-buyer is-active">Buyer</span>
+          <button type="button" class="tg-switch" id="enqToggle" role="switch" aria-checked="false" aria-label="Switch enquiry type between Buyer and Supplier">
+            <span class="tg-thumb"></span>
+          </button>
+          <span class="tg-label tg-supplier">Supplier</span>
+        </div>
+        <h3>If you're a <span class="enq-role">Buyer</span></h3>
+        <input type="hidden" name="interest" value="Buyer Enquiry" id="enqInterest">
         <div class="hp-field" aria-hidden="true"><label>Website</label><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
         <div class="f-row">
           <div class="field"><label>Full Name *</label><input name="name" type="text" required placeholder="Full name"></div>
@@ -531,25 +537,7 @@
           <div class="field"><label>Your Phone *</label><input name="phone" type="tel" required placeholder="+91"></div>
           <div class="field"><label>Your Email *</label><input name="email" type="email" required placeholder="you@example.com"></div>
         </div>
-        <div class="field"><label>Your Message</label><textarea name="message" placeholder="Categories you want to import, target markets and expected volumes…"></textarea></div>
-        <button class="form-btn" type="submit">Submit</button>
-        <div class="form-status" role="status"></div>
-      </form>
-
-      <!-- Supplier -->
-      <form class="enquiry-card js-enquiry reveal d1" method="post" action="mailer.php" novalidate>
-        <h3>If you're a <span>Supplier</span></h3>
-        <input type="hidden" name="interest" value="Supplier Enquiry">
-        <div class="hp-field" aria-hidden="true"><label>Website</label><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
-        <div class="f-row">
-          <div class="field"><label>Full Name *</label><input name="name" type="text" required placeholder="Full name"></div>
-          <div class="field"><label>Company Name *</label><input name="company" type="text" required placeholder="Company name"></div>
-        </div>
-        <div class="f-row">
-          <div class="field"><label>Your Phone *</label><input name="phone" type="tel" required placeholder="+91"></div>
-          <div class="field"><label>Your Email *</label><input name="email" type="email" required placeholder="you@example.com"></div>
-        </div>
-        <div class="field"><label>Your Message</label><textarea name="message" placeholder="What you supply — ingredients, packaging, equipment or services…"></textarea></div>
+        <div class="field"><label>Your Message</label><textarea name="message" id="enqMessage" placeholder="Categories you want to import, target markets and expected volumes…"></textarea></div>
         <button class="form-btn" type="submit">Submit</button>
         <div class="form-status" role="status"></div>
       </form>

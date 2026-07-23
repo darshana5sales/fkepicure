@@ -494,8 +494,26 @@ h2.inline-h em{font-style:italic;font-weight:500;color:var(--saffron)}
 .career-visual img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
 .career-visual:hover img{transform:scale(1.06)}
 
-/* ---------- dual buyer/supplier enquiry ---------- */
+/* ---------- dynamic buyer/supplier enquiry ---------- */
+.enquiry-wrap{max-width:640px;margin:0 auto}
 .enquiry-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+
+/* buyer ⇄ supplier toggle */
+.toggle-row{display:flex;align-items:center;justify-content:center;gap:16px;margin-bottom:26px}
+.tg-label{
+  font-size:.78rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--stone);cursor:pointer;user-select:none;transition:color .3s var(--ease);
+}
+.tg-label.is-active{color:var(--saffron-deep)}
+.tg-switch{
+  width:62px;height:30px;flex-shrink:0;padding:3px;cursor:pointer;
+  border:1px solid var(--line);background:var(--paper);
+  display:inline-flex;align-items:center;
+  transition:background .3s var(--ease),border-color .3s var(--ease);
+}
+.tg-switch:hover{border-color:var(--saffron)}
+.tg-switch .tg-thumb{width:24px;height:24px;background:var(--saffron);display:block;transition:transform .3s var(--ease)}
+.tg-switch.on .tg-thumb{transform:translateX(32px)}
 .enquiry-card{
   background:var(--ivory);border:1px solid var(--line);border-radius:22px;
   padding:clamp(28px,3.4vw,46px);
