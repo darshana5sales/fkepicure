@@ -565,6 +565,16 @@ footer{background:var(--espresso);color:var(--ivory);padding:54px 0 0;border-top
 }
 .foot-bottom a{color:rgba(251,247,241,.65)}
 .foot-bottom a:hover{color:var(--gold)}
+.foot-credit{margin-left:auto}
+.foot-credit .heart{color:var(--saffron)}
+.foot-credit a{font-weight:700;color:rgba(251,247,241,.75);position:relative}
+.foot-credit a::after{
+  content:"";position:absolute;left:0;bottom:-2px;height:1px;width:100%;
+  background:var(--gold);transform:scaleX(0);transform-origin:right;
+  transition:transform .35s var(--ease);
+}
+.foot-credit a:hover{color:var(--gold)}
+.foot-credit a:hover::after{transform:scaleX(1);transform-origin:left}
 
 /* ---------- back to top ---------- */
 .to-top{
