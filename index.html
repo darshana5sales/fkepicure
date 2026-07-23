@@ -510,62 +510,85 @@
 
 <!-- ══════════ CONTACT ══════════ -->
 <section id="contact" style="background:var(--paper)">
-  <div class="wrap contact-grid">
-    <div>
-      <span class="eyebrow reveal">Contact Us</span>
-      <h2 class="inline-h reveal d1">Let's put India<br>in <em>your freezer.</em></h2>
-      <p class="reveal d1" style="color:var(--stone);margin-top:16px;max-width:440px">Export enquiry, private label project or food-service supply — tell us your market and volumes, and we'll come back with a product list, pricing and MOQs.</p>
-      <div class="contact-list">
-        <div class="c-row reveal d1">
-          <div class="c-ico">❄</div>
-          <div>
-            <div class="c-k">Registered Office &amp; Plant</div>
-            <div class="c-v">FK Epicure Foods LLP<br>Block A, Quadra 108, Near KK House, Rajpath Club Road,<br>Ambli, Ahmedabad — 380058, Gujarat, India</div>
-          </div>
-        </div>
-        <div class="c-row reveal d2">
-          <div class="c-ico">✆</div>
-          <div>
-            <div class="c-k">Customer Care</div>
-            <div class="c-v"><a href="tel:+919033056498">+91 90330 56498</a> · <a href="tel:+917567411818">+91 75674 11818</a></div>
-          </div>
-        </div>
-        <div class="c-row reveal d3">
-          <div class="c-ico">✉</div>
-          <div>
-            <div class="c-k">Email</div>
-            <div class="c-v"><a href="mailto:info@fkepicurefoods.in">info@fkepicurefoods.in</a></div>
-          </div>
-        </div>
-      </div>
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow">Contact Us</span>
+      <h2>Let's put India in <em>your freezer.</em></h2>
+      <p>Whether you want to stock our range or supply into our plant — tell us the details and we'll come back with a product list, pricing and MOQs.</p>
     </div>
-    <div class="contact-form reveal d2">
-      <h3>Buyer &amp; supplier enquiry.</h3>
-      <p class="fp">Tell us your market, the categories you need, and expected volumes.</p>
-      <form id="contactForm" method="post" action="mailer.php" novalidate>
-        <div class="hp-field" aria-hidden="true">
-          <label>Website</label><input type="text" name="website" tabindex="-1" autocomplete="off">
+
+    <div class="enquiry-grid">
+      <!-- Buyer -->
+      <form class="enquiry-card js-enquiry reveal" method="post" action="mailer.php" novalidate>
+        <h3>If you're a <span>Buyer</span></h3>
+        <input type="hidden" name="interest" value="Buyer Enquiry">
+        <div class="hp-field" aria-hidden="true"><label>Website</label><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
+        <div class="f-row">
+          <div class="field"><label>Full Name *</label><input name="name" type="text" required placeholder="Full name"></div>
+          <div class="field"><label>Company Name *</label><input name="company" type="text" required placeholder="Company name"></div>
         </div>
         <div class="f-row">
-          <div class="field"><label for="cf-name">Your Name</label><input id="cf-name" name="name" type="text" required placeholder="Full name"></div>
-          <div class="field"><label for="cf-phone">Phone</label><input id="cf-phone" name="phone" type="tel" placeholder="+91"></div>
+          <div class="field"><label>Your Phone *</label><input name="phone" type="tel" required placeholder="+91"></div>
+          <div class="field"><label>Your Email *</label><input name="email" type="email" required placeholder="you@example.com"></div>
         </div>
-        <div class="field"><label for="cf-email">Email</label><input id="cf-email" name="email" type="email" required placeholder="you@example.com"></div>
-        <div class="field"><label for="cf-interest">I'm interested in</label>
-          <select id="cf-interest" name="interest">
-            <option>Frozen Food Imports / Distribution</option>
-            <option>Private Label Manufacturing</option>
-            <option>Contract Manufacturing / Line Trial</option>
-            <option>Food-Service / QSR Supply</option>
-            <option>Full Product Catalogue &amp; Pricing</option>
-            <option>Careers</option>
-            <option>Something Else</option>
-          </select>
-        </div>
-        <div class="field"><label for="cf-msg">Message</label><textarea id="cf-msg" name="message" placeholder="Your market, categories and expected volumes…"></textarea></div>
-        <button class="form-btn" type="submit">Send Message</button>
-        <div class="form-status" id="formStatus" role="status"></div>
+        <div class="field"><label>Your Message</label><textarea name="message" placeholder="Categories you want to import, target markets and expected volumes…"></textarea></div>
+        <button class="form-btn" type="submit">Submit</button>
+        <div class="form-status" role="status"></div>
       </form>
+
+      <!-- Supplier -->
+      <form class="enquiry-card js-enquiry reveal d1" method="post" action="mailer.php" novalidate>
+        <h3>If you're a <span>Supplier</span></h3>
+        <input type="hidden" name="interest" value="Supplier Enquiry">
+        <div class="hp-field" aria-hidden="true"><label>Website</label><input type="text" name="website" tabindex="-1" autocomplete="off"></div>
+        <div class="f-row">
+          <div class="field"><label>Full Name *</label><input name="name" type="text" required placeholder="Full name"></div>
+          <div class="field"><label>Company Name *</label><input name="company" type="text" required placeholder="Company name"></div>
+        </div>
+        <div class="f-row">
+          <div class="field"><label>Your Phone *</label><input name="phone" type="tel" required placeholder="+91"></div>
+          <div class="field"><label>Your Email *</label><input name="email" type="email" required placeholder="you@example.com"></div>
+        </div>
+        <div class="field"><label>Your Message</label><textarea name="message" placeholder="What you supply — ingredients, packaging, equipment or services…"></textarea></div>
+        <button class="form-btn" type="submit">Submit</button>
+        <div class="form-status" role="status"></div>
+      </form>
+    </div>
+
+    <div class="contact-strip">
+      <div class="cs-item reveal">
+        <div class="c-ico">❄</div>
+        <div><div class="c-k">Office &amp; Plant</div><div class="c-v">Quadra 108, Rajpath Club Road, Ambli, Ahmedabad — 380058</div></div>
+      </div>
+      <div class="cs-item reveal d1">
+        <div class="c-ico">✆</div>
+        <div><div class="c-k">Customer Care</div><div class="c-v"><a href="tel:+919033056498">+91 90330 56498</a> · <a href="tel:+917567411818">+91 75674 11818</a></div></div>
+      </div>
+      <div class="cs-item reveal d2">
+        <div class="c-ico">✉</div>
+        <div><div class="c-k">Email</div><div class="c-v"><a href="mailto:info@fkepicurefoods.in">info@fkepicurefoods.in</a></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ LOCATION / MAP ══════════ -->
+<section id="location" class="location">
+  <div class="wrap">
+    <div class="loc-grid">
+      <div class="loc-panel">
+        <span class="eyebrow reveal">Find Us</span>
+        <h2 class="inline-h reveal d1">Come see the plant <em>in Ahmedabad.</em></h2>
+        <p class="reveal d2" style="color:var(--stone);margin-top:16px">Our registered office and manufacturing plant are under one roof on Rajpath Club Road, Ambli. Buyers and partners are welcome for a plant visit and sample tasting — book ahead so we can have the right team on hand.</p>
+        <div class="loc-card reveal d2">
+          <div class="lc-title">FK Epicure Foods LLP — Plant &amp; Registered Office</div>
+          <p>Block A, Quadra 108, Near KK House, Rajpath Club Road, Ambli, Ahmedabad — 380058, Gujarat, India</p>
+          <a class="bm-link" href="https://www.google.com/maps/search/?api=1&query=Quadra+108+Rajpath+Club+Road+Ambli+Ahmedabad" target="_blank" rel="noopener">Get Directions <span class="arr">→</span></a>
+        </div>
+      </div>
+      <div class="loc-map reveal d1">
+        <iframe src="https://www.google.com/maps?q=Quadra%20108%20Rajpath%20Club%20Road%20Ambli%20Ahmedabad&output=embed" width="100%" height="100%" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="FK Epicure Foods plant location on Google Maps, Ahmedabad"></iframe>
+      </div>
     </div>
   </div>
 </section>

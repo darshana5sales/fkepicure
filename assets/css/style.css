@@ -494,7 +494,59 @@ h2.inline-h em{font-style:italic;font-weight:500;color:var(--saffron)}
 .career-visual img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
 .career-visual:hover img{transform:scale(1.06)}
 
-/* ---------- contact ---------- */
+/* ---------- dual buyer/supplier enquiry ---------- */
+.enquiry-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.enquiry-card{
+  background:var(--ivory);border:1px solid var(--line);border-radius:22px;
+  padding:clamp(28px,3.4vw,46px);
+  transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s var(--ease);
+}
+.enquiry-card:hover{transform:translateY(-6px);box-shadow:0 34px 65px -34px rgba(43,26,13,.28);border-color:rgba(232,114,12,.5)}
+.enquiry-card h3{
+  font-family:var(--serif);font-weight:400;text-align:center;
+  font-size:clamp(1.5rem,2.4vw,2.1rem);margin-bottom:28px;
+}
+.enquiry-card h3 span{color:var(--saffron);font-style:italic;font-weight:500}
+.enquiry-card .field label{color:var(--stone)}
+.enquiry-card .field input,.enquiry-card .field textarea{
+  background:var(--paper);border:1px solid var(--line);color:var(--espresso);
+}
+.enquiry-card .field input::placeholder,.enquiry-card .field textarea::placeholder{color:rgba(43,26,13,.34)}
+.enquiry-card .field input:focus,.enquiry-card .field textarea:focus{border-color:var(--saffron);background:#fff}
+.enquiry-card .form-btn{margin-top:6px}
+.enquiry-card .form-status.ok{background:rgba(90,150,90,.14);color:#3a7a3a;border:1px solid rgba(90,150,90,.4)}
+.enquiry-card .form-status.err{background:rgba(190,70,60,.12);color:#a5352b;border:1px solid rgba(190,70,60,.35)}
+
+/* contact info strip */
+.contact-strip{margin-top:clamp(30px,4vw,48px);display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.cs-item{
+  display:flex;align-items:center;gap:16px;padding:20px 22px;
+  border:1px solid var(--line);border-radius:16px;background:var(--ivory);
+  transition:background .35s var(--ease),transform .35s var(--ease),border-color .35s var(--ease);
+}
+.cs-item:hover{transform:translateY(-4px);border-color:var(--saffron)}
+.cs-item:hover .c-ico{background:var(--saffron);color:#fff;border-color:var(--saffron)}
+.cs-item .c-v{font-size:.9rem}
+
+/* ---------- location / map ---------- */
+.location{background:var(--ivory)}
+.loc-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,4vw,56px);align-items:stretch}
+.loc-panel{display:flex;flex-direction:column;justify-content:center}
+.loc-card{
+  margin-top:26px;padding:26px 28px;border:1px solid var(--line);border-radius:18px;background:var(--paper);
+  transition:border-color .4s var(--ease),transform .4s var(--ease);
+}
+.loc-card:hover{border-color:var(--saffron);transform:translateY(-4px)}
+.loc-card .lc-title{font-weight:800;font-size:.95rem;margin-bottom:8px}
+.loc-card p{color:var(--stone);font-size:.9rem;margin-bottom:16px;line-height:1.6}
+.loc-card .bm-link:hover .arr{transform:translateX(6px)}
+.loc-map{
+  border-radius:20px;overflow:hidden;border:1px solid var(--line);min-height:420px;
+  box-shadow:0 30px 60px -34px rgba(43,26,13,.3);
+}
+.loc-map iframe{display:block;width:100%;height:100%;min-height:420px}
+
+/* ---------- contact (legacy single-column, kept for reference) ---------- */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px)}
 .contact-list{margin-top:34px;display:flex;flex-direction:column;gap:6px}
 .c-row{
@@ -612,6 +664,8 @@ footer{background:var(--espresso);color:var(--ivory);padding:54px 0 0;border-top
   .spec{border-left:0;border-top:1px solid rgba(251,247,241,.16)}
   .career-grid{grid-template-columns:1fr}
   .career-visual{max-width:560px;width:100%}
+  .loc-grid{grid-template-columns:1fr}
+  .loc-map{min-height:340px}
   .hero-grid,.about-grid,.contact-grid,.mfg-grid,.quality-grid{grid-template-columns:1fr}
   .hero-grid{gap:44px}
   .hero-visual{max-width:480px;margin:0 auto;width:100%}
@@ -639,6 +693,8 @@ footer{background:var(--espresso);color:var(--ivory);padding:54px 0 0;border-top
   .flow{grid-template-columns:1fr}
   .mfg-specs{grid-template-columns:1fr}
   .mfg-cta{flex-direction:column;align-items:flex-start}
+  .enquiry-grid{grid-template-columns:1fr;max-width:460px;margin:0 auto}
+  .contact-strip{grid-template-columns:1fr;max-width:460px;margin-left:auto;margin-right:auto}
   .f-row{grid-template-columns:1fr}
   .qual-list{grid-template-columns:repeat(2,1fr);gap:10px}
   .qual img{height:84px}

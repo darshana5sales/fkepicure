@@ -42,6 +42,7 @@ function clean($key, $max = 500)
 }
 
 $name    = clean('name', 100);
+$company = clean('company', 120);
 $phone   = clean('phone', 30);
 $email   = clean('email', 150);
 $subject = clean('interest', 120);
@@ -64,6 +65,7 @@ $mailSubject = 'FK Epicure Foods — ' . $subject . ' — ' . $name;
 $body  = "New enquiry from fkepicurefoods.in\n";
 $body .= "──────────────────────────────────\n\n";
 $body .= "Name:      $name\n";
+$body .= "Company:   " . ($company !== '' ? $company : '—') . "\n";
 $body .= "Email:     $email\n";
 $body .= "Phone:     " . ($phone !== '' ? $phone : '—') . "\n";
 $body .= "Interest:  $subject\n\n";

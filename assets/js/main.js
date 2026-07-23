@@ -89,18 +89,16 @@
     });
   }
 
-  /* ---------- contact form → mailer.php ---------- */
-  var form = document.getElementById('contactForm');
-  if (form) {
-    var statusBox = document.getElementById('formStatus');
-    var btn = form.querySelector('.form-btn');
+  /* ---------- enquiry forms → mailer.php ---------- */
+  document.querySelectorAll('form.js-enquiry, #contactForm').forEach(function (form) {
+    var statusBox = form.querySelector('.form-status');
+    var btn = form.querySelector('.form-btn') || form.querySelector('button[type="submit"]');
 
     form.addEventListener('submit', function (ev) {
       ev.preventDefault();
-      statusBox.className = 'form-status';
-      btn.disabled = true;
-      var original = btn.textContent;
-      btn.textContent = 'Sending…';
+      if (statusBox) statusBox.className = 'form-status';
+      var original = btn ? btn.textContent : '';
+      if (btn) { btn.disabled = true; btn.textContent = 'Sending…'; }
 
       fetch('mailer.php', {
         method: 'POST',
@@ -122,9 +120,8 @@
           statusBox.classList.add('err');
         })
         .finally(function () {
-          btn.disabled = false;
-          btn.textContent = original;
+          if (btn) { btn.disabled = false; btn.textContent = original; }
         });
     });
-  }
+  });
 })();
